@@ -76,3 +76,8 @@
 .registerAnotherServiceButton:hover {
   background-color: #0b1648;
 }
+
+.serviceFinalizedText {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
