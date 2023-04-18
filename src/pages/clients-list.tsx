@@ -6,6 +6,7 @@ import { clients } from "@/utils/mocks";
 import { Client } from "@/utils/types";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Head from "next/head";
 
 const ClientsList = () => {
   const [clientName, setClientName] = useState("");
@@ -21,51 +22,62 @@ const ClientsList = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <Link className={styles.backButton} href="/">
-          <IoIosArrowBack size={25} />
-        </Link>
-      </header>
-      <div className={styles.wrapper}>
-        <div className={styles.containerLogo}>
-          <Image
-            src="/logo.webp"
-            alt="logo da Ultracar"
-            width={200}
-            height={200}
-          />
-        </div>
-        <div className={styles.containerInput}>
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="Buscar um Cliente"
-            name="clientName"
-            value={clientName}
-            onChange={(e) => setClientName(e.target.value)}
-          />
-        </div>
+    <>
+      <Head>
+        <title>ULTRACAR - Lista de Clientes</title>
+        <meta
+          name="description"
+          content="Conheça o Ultracarweb, sistema de gestão especializado para empresas da reparação automotiva. Administre sua oficina com facilidade e segurança."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <Link className={styles.backButton} href="/">
+            <IoIosArrowBack size={25} />
+          </Link>
+        </header>
+        <div className={styles.wrapper}>
+          <div className={styles.containerLogo}>
+            <Image
+              src="/logo.webp"
+              alt="logo da Ultracar"
+              width={200}
+              height={200}
+            />
+          </div>
+          <div className={styles.containerInput}>
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Buscar um Cliente"
+              name="clientName"
+              value={clientName}
+              onChange={(e) => setClientName(e.target.value)}
+            />
+          </div>
 
-        <div className={styles.containerClientsList}>
-          <p className={styles.listText}>
-            Lista de clientes - Escolha um cliente na lista
-          </p>
-          {clients.map((client) => {
-            return client.name.includes(clientName) ? (
-              <div
-                className={styles.client}
-                key={client.id}
-                onClick={() => handleClient(client)}
-              >
-                <p className={styles.clientName}>{client.name}</p>
-                <p className={styles.clientVehicle}>{client.vehicle}</p>
-              </div>
-            ) : null;
-          })}
+          <div className={styles.containerClientsList}>
+            <p className={styles.listText}>
+              Lista de clientes - Escolha um cliente na lista
+            </p>
+            {clients.map((client) => {
+              return client.name.includes(clientName) ? (
+                <div
+                  className={styles.client}
+                  key={client.id}
+                  onClick={() => handleClient(client)}
+                >
+                  <p className={styles.clientName}>{client.name}</p>
+                  <p className={styles.clientVehicle}>{client.vehicle}</p>
+                </div>
+              ) : null;
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
