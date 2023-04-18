@@ -3,3 +3,9 @@ export type Client = {
   name: string;
   vehicle: string;
 };
+
+export type Service = {
+  id: string;
+  service: string;
+  coast: number;
+};
