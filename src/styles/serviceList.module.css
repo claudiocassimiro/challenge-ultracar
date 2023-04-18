@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 1.5rem;
+  margin: 0 auto;
+  max-width: 60rem;
+  overflow: hidden;
+}
+
+.containerServices {
+  width: 100%;
+  height: 90%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service {
+  width: 100%;
+  border: 0.1rem solid #000;
+  border-radius: 0.4rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.containerClientInfos,
+.containerServiceInfos {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.clientName,
+.clientVehicle,
+.mechanicName,
+.servicePrice {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.finishServiceButton {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #000;
+  color: #000;
+  background-color: #9be6e0;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.finishServiceButton:hover {
+  background-color: #56a59f;
+}
+
+.registerAnotherServiceButton {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1.3rem;
+  border-radius: 0.8rem;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: 0.3s;
+  text-align: center;
+  color: #ffffff;
+  background-color: #202b57;
+}
+
+.registerAnotherServiceButton:hover {
+  background-color: #0b1648;
+}
