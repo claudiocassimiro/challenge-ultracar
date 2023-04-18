@@ -72,7 +72,6 @@ const Services = () => {
                 id="select-mechanic"
                 value={selectedMechanic}
                 onChange={(e) => setSelectedMechanic(e.target.value)}
-                size={mechanics.length}
               >
                 {mechanics.map((mechanic) => {
                   return (
@@ -92,7 +91,6 @@ const Services = () => {
                 id="select-service"
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)}
-                size={services.length}
               >
                 {services.map((service) => {
                   return (
