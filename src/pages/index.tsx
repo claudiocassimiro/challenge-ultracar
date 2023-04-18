@@ -31,13 +31,16 @@ export default function Home() {
             <Link href="#" className={styles.buttonRegisteredCustomers}>
               Clientes Cadastrados
             </Link>
-            <Link href="#" className={styles.buttonsRegisterCustomer}>
+            <Link
+              href={{ pathname: "/incode", query: { page: "/" } }}
+              className={styles.buttonsRegisterCustomer}
+            >
               Cadastrar Cliente
             </Link>
           </div>
           <Link
             className={styles.linkToQrCode}
-            href="#"
+            href={{ pathname: "/incode", query: { page: "/" } }}
             title="Ler QRcode do Cliente"
           >
             <div className={styles.qrCodeTextContainer}>
