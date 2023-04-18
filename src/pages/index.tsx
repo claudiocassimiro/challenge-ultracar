@@ -28,7 +28,10 @@ export default function Home() {
             />
           </div>
           <div className={styles.containerButton}>
-            <Link href="#" className={styles.buttonRegisteredCustomers}>
+            <Link
+              href="/clients-list"
+              className={styles.buttonRegisteredCustomers}
+            >
               Clientes Cadastrados
             </Link>
             <Link
