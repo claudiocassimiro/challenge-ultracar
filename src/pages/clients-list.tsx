@@ -5,6 +5,7 @@ import { useState } from "react";
 import { clients } from "@/utils/mocks";
 import { Client } from "@/utils/types";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const ClientsList = () => {
   const [clientName, setClientName] = useState("");
@@ -27,11 +28,19 @@ const ClientsList = () => {
         </Link>
       </header>
       <div className={styles.wrapper}>
+        <div className={styles.containerLogo}>
+          <Image
+            src="/logo.webp"
+            alt="logo da Ultracar"
+            width={200}
+            height={200}
+          />
+        </div>
         <div className={styles.containerInput}>
           <input
             className={styles.input}
             type="text"
-            placeholder="Digite o nome do Cliente"
+            placeholder="Buscar um Cliente"
             name="clientName"
             value={clientName}
             onChange={(e) => setClientName(e.target.value)}
@@ -39,6 +48,9 @@ const ClientsList = () => {
         </div>
 
         <div className={styles.containerClientsList}>
+          <p className={styles.listText}>
+            Lista de clientes - Escolha um cliente na lista
+          </p>
           {clients.map((client) => {
             return client.name.includes(clientName) ? (
               <div
