@@ -5,7 +5,7 @@ import Head from "next/head";
 
 type Service = {
   coast: number;
-  finishedServiceDatetime: number;
+  finishServiceDatetime: number | string;
   id: string;
   initServiceDatetime: number;
   mechanicName: string;
@@ -24,9 +24,13 @@ const ServiceList = () => {
   }, []);
 
   const handleFinishedServices = (item: Service) => {
-    const newServicesArray = services.filter(
-      (element) => element.id !== item.id
-    );
+    const newServicesArray = services.map((element) => {
+      if (element.id === item.id) {
+        return { ...element, finishServiceDatetime: Date.now() };
+      }
+
+      return { ...element };
+    });
 
     sessionStorage.setItem("services", JSON.stringify(newServicesArray));
     setServices(newServicesArray);
@@ -62,13 +66,19 @@ const ServiceList = () => {
                   <p className={styles.servicePrice}>{`R$ ${item.coast}`}</p>
                 </div>
 
-                <button
-                  className={styles.finishServiceButton}
-                  type="button"
-                  onClick={() => handleFinishedServices(item)}
-                >
-                  Finalizar Serviço
-                </button>
+                {item.finishServiceDatetime === "" ? (
+                  <button
+                    className={styles.finishServiceButton}
+                    type="button"
+                    onClick={() => handleFinishedServices(item)}
+                  >
+                    Finalizar Serviço
+                  </button>
+                ) : (
+                  <p className={styles.serviceFinalizedText}>
+                    Serviço Finalizado
+                  </p>
+                )}
               </div>
             );
           })}
