@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+}
+
+.backButton {
+  color: black;
+}
+
+.containerImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
