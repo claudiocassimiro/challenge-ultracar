@@ -20,8 +20,13 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 50%;
+  height: 100%;
   padding: 1.5rem;
+}
+
+.containerSelects {
+  width: 100%;
+  height: 70%;
 }
 
 .label {
@@ -29,7 +34,6 @@
   flex-direction: column;
   font-size: 1.6rem;
   font-weight: 600;
-  width: 100%;
 }
 
 .select {
